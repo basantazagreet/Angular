@@ -1,0 +1,21 @@
+<h3>Data fetched using API from apiservice (Turn on json server first: json-server --watch db.json)</h3>
+
+<ul>
+    <li *ngFor="let restaurant of restaurants">{{restaurant.name}},{{restaurant.Address}}, {{restaurant.contact}} </li>
+</ul>
+
+
+<h3>POST API demo</h3>
+<form #postRestaurantForm = "ngForm" (ngSubmit)="postRestaurantHandler(postRestaurantForm.value)">
+    <input type="text" ngModel name="name" placeholder="Enter restaurant name"><br><br>
+    <input type="text" ngModel name="address" placeholder="Enter restaurant address"><br><br>
+    <input type="text" ngModel name="contact" placeholder="Enter restaurant Contact"><br><br>
+    <button type="submit">Submit</button>
+</form>
+
+<h3>Lazy loading and routing module example</h3>
+<ul>
+    <li><a routerLink="/auth/login">Login</a></li>
+    <li><a routerLink="/auth/signup">signup</a></li>
+</ul>
+<router-outlet></router-outlet>

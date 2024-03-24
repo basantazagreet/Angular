@@ -1,0 +1,53 @@
+<h1>Second Component</h1>
+
+<h3>Example of property binding</h3>
+<input type="text" value="{{name}}" disabled="{{disable}}"/>
+<br/><br/>
+<input type="text" [value]=name [disabled]=disable/>
+
+
+<h3>Example of Conditional Rendering</h3>
+
+<h4 *ngIf="display then IfBlock else ElseBlock"></h4>
+<ng-template #IfBlock><h4>Displays if condition is true</h4></ng-template>
+<ng-template #ElseBlock><h4>Displays if condition is False</h4></ng-template>
+<h4 *ngIf="display">One More Simple if true only</h4>
+<button (click)="changeDisplay()">Toggle</button>
+
+<h4>Else If conditions</h4>
+<ng-template [ngIf]="color === 'red'">
+<h4 style="color:red">Color red is active</h4>    
+</ng-template>
+<ng-template [ngIf]="color === 'green'">
+<h4 style="color:green">Color green is active</h4>    
+</ng-template>
+<ng-template [ngIf]="color === 'blue'">
+<h4 style="color:blue">Color blue is active</h4>    
+</ng-template>
+
+<h4>Same as above with switch case:</h4>
+<div [ngSwitch]="color">
+    <h4 *ngSwitchCase="'red'" style="color:red">Color red is active</h4> 
+    <h4 *ngSwitchCase="'blue'" style="color:blue">Color red is active</h4> 
+    <h4 *ngSwitchCase="'orange'" style="color:orange">Color red is active</h4> 
+    <h4 *ngSwitchCase="'green'" style="color:green">Color red is active</h4> 
+    <h4 *ngSwitchDefault >Default</h4> 
+</div>
+
+
+<h3>For loop in Angular:</h3>
+
+<div >
+    <ul *ngFor="let item of userDetails">Name:{{item.name}} Email:{{item.email}}Phone:{{item.phone}}
+    <ul>
+
+        <li *ngFor="let movie of item.favMovies">{{movie}}</li>
+    </ul>
+    </ul>
+</div>
+
+
+<h3>Style binding in Angular:</h3>
+
+<h2 [style.color]="textColor" [style.background-color]="bgColor">This text will change color through style binding</h2>
+<button (click)="changeTextColor()">Change color</button>

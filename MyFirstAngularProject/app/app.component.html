@@ -1,0 +1,26 @@
+<router-outlet></router-outlet>
+<app-header></app-header>
+<h1>First Component</h1>
+<app-first></app-first>
+<h1>Second Component</h1>
+<app-second></app-second>
+<h1>Third Component</h1>
+<app-third [myVar]="data"></app-third>
+<button (click)="changeData()">Change prop value</button>
+<h1>Fourth Component(Child component)</h1>
+<h3>Reusable component </h3>
+<ul *ngFor="let user of userDetails">
+    <app-child [User]="user"></app-child>
+</ul>
+<h1>Child to parent data transfer</h1>
+<app-childtoparent (updateDataEvent)="updateData($event)"></app-childtoparent>
+<h1>Fifth component</h1>
+<app-fifth></app-fifth>
+
+<h4 RedElement>This text is made red using angular directives</h4>
+<h1>Sixth Component</h1>
+<app-sixth></app-sixth>
+<h1>Seventh Component</h1>
+<app-seventh></app-seventh>
+
+

@@ -1,0 +1,18 @@
+<input type="text" #box><br>
+<button (click)="updateDataEvent.emit(box.value)">Emit to parent</button>
+
+
+<h3>Two way binding</h3>
+<input type="text" [(ngModel)]="name"/>
+<h4>{{name}}</h4>
+
+<h3>Input reference variable</h3>
+<input type="text" placeholder="Enter sth." name="name" #box2>
+<br>
+<button (click)="displayVariable(box2)">Display in console</button>
+
+<h3>Pipes in Angular</h3>
+<h4>{{title | uppercase}}</h4>
+<h4>{{title | slice:3:6}}</h4>
+<h4>{{20 | currency:'USD'}}</h4>
+<h4>{{users | json}}</h4>

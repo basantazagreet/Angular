@@ -1,0 +1,25 @@
+<div *ngIf="display">
+<form #basicForm="ngForm" (ngSubmit)="formHandler(basicForm.value)" >
+    <input type="text" ngModel name="name" placeholder="name"/><br><br>
+    <input type="text" ngModel name="email" placeholder="email"/><br><br>
+    <input type="text" ngModel name="password" placeholder="password"/><br><br>
+
+    <button type="submit" >Submit</button>
+</form>
+</div>
+<button (click)="toggleForm()">Toggle Form</button>
+<h3>Todo list </h3>
+
+<input type="text" #entertodo placeholder="Enter Task" name="entertodo">
+<button (click)="addTask(entertodo.value)">Add task</button>
+<br><br>
+
+<ul>
+    <li *ngFor="let item of todolist">{{item.todo}} <button (click)="deleteTask(item.id)">Delete</button></li>
+</ul>
+
+<h3>Props passing</h3>
+<button (click)="displayData()">Display data on console</button>
+
+
+

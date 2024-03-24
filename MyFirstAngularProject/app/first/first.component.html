@@ -1,0 +1,21 @@
+<style>
+    h3{
+        background-color: red;
+    }
+</style>
+
+
+<button (click)="logIt('Button clicked')">Click here</button>
+<input type="text" #box (keyup)="logIt(box.value)" placeholder="Key Up"/>
+<input type="text" #box1 (keydown)="logIt(box1.value)" placeholder="Key Down"/>
+<input type="text" #box2 (blur)="logIt(box2.value)" placeholder="Blur"/>
+<input type="text" #box3 (input)="logIt(box3.value)" placeholder="Input"/>
+<h3 (mouseover)="logIt('Mouse hovered')">Hover mouse over and see console</h3>
+
+<input type="text" #box4 placeholder="Click and value will load" name="First Name"/>
+<button (click)="displayVal(box4.value)">Click to display Value</button>
+<p>The value you entered is: {{name}}</p>
+
+<h3>Count: {{count}}</h3>
+<button (click)="changeCounter('increase')">++</button>
+<button (click)="changeCounter('decrease')">--</button>
